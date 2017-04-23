@@ -9,21 +9,21 @@
   file:
     path: "{{ go_parentdir }}/go"
     state: absent
-  when: '"{{ go_version }}" not in go_installed_version.stdout'
+  when: go_version not in go_installed_version.stdout
 
 - name: Download the Go tarball
   get_url:
     url: "{{ go_download_url }}/go{{ go_version }}.linux-amd64.tar.gz"
     checksum: "{{ go_checksum }}"
     dest: "{{ go_parentdir }}/src"
-  when: 'go_installed_version|failed or "{{ go_version }}" not in go_installed_version.stdout'
+  when: go_installed_version|failed or go_version not in go_installed_version.stdout
 
 - name: Extract the downloaded Go tarball
   unarchive:
     src: "{{ go_parentdir }}/src/go{{ go_version }}.linux-amd64.tar.gz"
     dest: "{{ go_parentdir }}"
     remote_src: yes
-  when: 'go_installed_version|failed or "{{ go_version }}" not in go_installed_version.stdout'
+  when: go_installed_version|failed or go_version not in go_installed_version.stdout
 
 - name: Create the bash profile that adds the Go PATH for all users
   copy:
