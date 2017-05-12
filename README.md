@@ -31,6 +31,16 @@ go_parentdir: /usr/local
 By default version 1.8.1 is installed but you can define the version of your choice, just don't forget to define the correct checksum for the version you define. This installation goes into the parent directory /usr/local but this parameter can also be modified.
 Upgrading or downgrading of Go on your system can be done by defining another `go_version`.
 
+#### Examples
+
+This is a basic playbook to install Go with the default variables:
+```YAML
+---
+- hosts: all
+  roles:
+    - golang
+```
+
 ### Authors and license
 
 The `golang` role was written by:
