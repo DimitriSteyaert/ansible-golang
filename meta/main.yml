@@ -1,0 +1,32 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  author: 'Dimitri Steyaert'
+  description: 'Installs Golang with the version of your choice'
+  company: 'Steyaert Web Services'
+  license: 'MIT'
+  min_ansible_version: '1.9'
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - yakkety
+        - zesty
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+  galaxy_tags:
+    - composer
+    - php
+
+ansigenome_info:
+  galaxy_id: 'DimitriSteyaert'
+  travis: False
+  synopsis: |
+    This role basically just installs the Go programming language on your system.
+  usage: |
+    By default version 1.8.1 is installed but you can define the version of your choice, just don't forget to define the correct checksum for the version you define. This installation goes into the parent directory /usr/local but this parameter can also be modified.
