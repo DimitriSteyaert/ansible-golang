@@ -20,8 +20,8 @@ galaxy_info:
         - wheezy
         - jessie
   galaxy_tags:
-    - composer
-    - php
+    - go
+    - golang
 
 ansigenome_info:
   galaxy_id: 'DimitriSteyaert'
