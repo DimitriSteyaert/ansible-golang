@@ -20,6 +20,7 @@ galaxy_info:
         - wheezy
         - jessie
   galaxy_tags:
+    - development
     - go
     - golang
 
